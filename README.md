@@ -10,7 +10,8 @@ This project provides a framework for creating interactive 3D agentic AI avatars
 The goal is to create more immersive and engaging human-AI interactions compared to traditional text-based chatbots by giving the AI a visual, expressive persona. The framework currently showcases three distinct agents: a Cafe Receptionist, a Personal Assistant, and a Nurse Assistant, demonstrating potential applications across various domains.
 
 
-[![Watch Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red)]([https://youtu.be/Tki0Sc0_qQ0](https://youtu.be/L3iMVHcjaXM)) 
+[![Watch Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red)](https://youtu.be/L3iMVHcjaXM)
+
 
 
 ## Features
