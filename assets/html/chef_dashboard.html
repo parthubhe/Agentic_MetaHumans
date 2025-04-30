@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Added lang -->
+<head>
+    <meta charset="UTF-8">
+    <title>Chef Dashboard - Code Slayers</title>
+    <!-- Auto-refresh every 5 seconds -->
+    <meta http-equiv="refresh" content="5">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Main CSS File (for font variables & potential base styles) -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Bootstrap CSS for better table styling -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root { /* Make CSS variables available */
+          --default-font: "Source Code Pro", monospace;
+          --heading-font: "Orbitron", sans-serif;
+          --accent-color: #6c757d; /* Secondary color for dashboard */
+        }
+        body {
+            font-family: var(--default-font), sans-serif; /* Use default font */
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light background */
+        }
+        .dashboard-header {
+            background-color: #343a40; /* Dark header */
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            font-family: var(--heading-font), sans-serif;
+        }
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #ffffff; /* Ensure heading is white */
+        }
+        .container-fluid {
+             padding-left: 2rem;
+             padding-right: 2rem;
+        }
+
+        h2 {
+             font-family: var(--heading-font), sans-serif; /* Use heading font */
+             margin-top: 2rem;
+             margin-bottom: 1rem;
+             font-size: 1.5rem;
+             color: #495057; /* Dark grey heading */
+             border-bottom: 2px solid var(--accent-color);
+             padding-bottom: 0.5rem;
+        }
+        /* Use Bootstrap table classes */
+        .table {
+            background-color: #fff; /* White background for tables */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .table thead th {
+            background-color: #e9ecef; /* Light grey table header */
+            font-weight: 600; /* Bolder header text */
+            font-family: var(--default-font), sans-serif; /* Consistent font */
+            color: #495057;
+            border-bottom-width: 2px;
+        }
+        .table tbody tr:hover {
+            background-color: #f1f3f5; /* Slight hover effect */
+        }
+        .table td, .table th {
+            vertical-align: middle; /* Align content vertically */
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+    </style>
+    <!-- New Enhancements CSS -->
+    <link rel="stylesheet" href="assets/css/enhancements.css"> <!-- Keep if needed -->
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>Chef Dashboard</h1>
+    </div>
+
+    <div class="container-fluid">
+        {% set n = 5 %} <!-- Define n for use in heading -->
+        <h2>Recent Users (Last {{ n }})</h2>
+        {% if users %}
+            {% set last_users = users[-n:] %}
+            <div class="table-responsive"> <!-- Make table responsive -->
+                <table class="table table-striped table-hover"> <!-- Bootstrap classes -->
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Mobile Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in last_users %}
+                        <tr>
+                            <td>{{ user[0] }}</td>
+                            <td>{{ user[1] }}</td>
+                            <td>{{ user[2] }}</td>
+                            <td>{{ user[3] }}</td>
+                            <td>{{ user[4] }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">No recent users found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+             <p>No user data available.</p>
+        {% endif %}
+
+
+        <h2>Purchase History</h2>
+        {% if purchase_history %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User ID</th>
+                            <th>Order Date</th>
+                            <th>Product ID</th>
+                            <th>Price</th>
+                            <th>Seat No</th>
+                            <th>Token No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in purchase_history %}
+                        <tr>
+                            <td>{{ order[0] }}</td>
+                            <td>{{ order[1] }}</td>
+                            <td>{{ order[2] }}</td> <!-- Assuming date is pre-formatted -->
+                            <td>{{ order[3] }}</td>
+                            <td>{{ "$%.2f"|format(order[4]|float) }}</td> <!-- Format price -->
+                            <td>{{ order[5] }}</td>
+                            <td>{{ order[6] }}</td>
+                        </tr>
+                        {% else %}
+                         <tr>
+                            <td colspan="7" class="text-center">No purchase history found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>No purchase history available.</p>
+        {% endif %}
+
+        <p class="footer-note">Dashboard auto-refreshes every 5 seconds.</p>
+    </div> <!-- /container-fluid -->
+
+     <!-- Optional: Bootstrap JS for potential future features -->
+     <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>

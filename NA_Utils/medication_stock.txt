@@ -1,0 +1,4 @@
+paracatemol,324
+paracetamol,510
+paracetomol,1200
+cetrizine,50

@@ -1,0 +1,98 @@
+Tue Mar 25 11:26:07 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7BD86020>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:26:56 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7B20EC50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:27:10 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=anything%20about%20the
+Tue Mar 25 11:27:14 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7C28C550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:27:33 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7BD85750>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:27:51 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7C28C7C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:28:03 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7B20EBC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:28:18 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7BD86C80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:28:38 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7C28CEB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 11:28:53 2025: Error sending emotion payload for PA response: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA7C28DC30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Tue Mar 25 12:10:50 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=latest%20news
+Tue Mar 25 12:10:52 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=today's%20news
+Tue Mar 25 12:10:54 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=current%20events
+Tue Mar 25 12:11:16 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Mar 25 12:11:18 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Mar 25 12:12:09 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Mar 25 12:12:11 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Mar 25 12:12:13 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Mar 25 12:12:15 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Mar 25 12:12:16 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Fri Mar 28 22:54:41 2025: Error sending emotion payload for segment 1: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020612507220>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Fri Mar 28 22:54:41 2025: Error sending emotion payload for segment 3: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020612507A30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Fri Mar 28 22:54:41 2025: Error sending emotion payload for segment 2: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000206125500A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Fri Mar 28 22:54:41 2025: Error sending emotion payload for segment 4: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/A2E/SetEmotionByName (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000206125507C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Sat Mar 29 01:17:46 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:17:48 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:17:50 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:17:52 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:17:54 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:17:56 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:17:58 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:18:01 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:18:04 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:18:11 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:18:24 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:18:37 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:18:49 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:19:05 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Sat Mar 29 01:19:17 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Tue Apr  1 14:40:23 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:35 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:35 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:46 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:46 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:47 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:47 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:47 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:47 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:48 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:40:58 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:41:08 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:41:19 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:41:32 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 14:41:44 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr  1 15:11:05 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=latest%20news
+Tue Apr  1 15:11:08 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=current%20events
+Tue Apr  1 15:12:51 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=LED%20uses
+Tue Apr 22 12:32:09 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=latest%20news
+Tue Apr 22 16:33:37 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:38 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:38 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:39 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:39 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:40 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:40 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:40 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:41 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:41 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:42 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:42 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:43 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:43 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:33:46 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:35:15 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:35:16 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:35:57 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:36:41 2025: Error in music_play_tool: No module named 'vlc'
+Tue Apr 22 16:37:24 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:00:33 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=sad%20news%20today
+Thu Apr 24 23:00:35 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=tragic%20events
+Thu Apr 24 23:00:38 2025: Error fetching news: 404 Client Error: NOT FOUND for url: http://localhost:5000/news?query=latest%20tragic%20news
+Thu Apr 24 23:02:54 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:03:41 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:04:05 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:04:28 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:04:58 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:05:28 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:05:54 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:05:55 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:05:55 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:05:55 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:06:20 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:06:21 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:06:21 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:06:21 2025: Error in music_play_tool: No module named 'vlc'
+Thu Apr 24 23:06:22 2025: Error in music_play_tool: No module named 'vlc'
+Fri Apr 25 12:12:52 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
+Fri Apr 25 12:12:54 2025: Error sending email: (334, b'UGFzc3dvcmQ6')
