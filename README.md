@@ -106,9 +106,9 @@ This script downloads necessary CSS/JS libraries specified in assets from Bootst
 **7. Emotion Classifier Model:**
 The pre-trained emotion classification model (model.bin) and the RoBERTa tokenizer files are expected to be in specific local paths (e.g., D:\Metahuman Chatbot\...) as per emoClassier.py.
 You need to either:
-Download/obtain the model.bin file and place it in the expected path, OR
+Download/obtain the model.bin file and place it in the expected path, the model.bin and the Jupyter Notebook can be found in the MultiLabelClassifier folder, OR
 Modify the paths in emoClassier.py to point to where you store the model and tokenizer files, OR
-Retrain the classifier(MCC_NLTK.ipynb) on the desired amount of epochs and get the model.bin.
+Retrain the classifier(.ipynb file) on the desired amount of epochs and get the model.bin.
  
 The RoBERTa tokenizer/model files can be downloaded automatically by Transformers if the local path doesn't exist and you change AutoModel.from_pretrained(r"D:\...") to AutoModel.from_pretrained("roberta-base") (requires internet connection on first run).
 
