@@ -1,1 +1,2 @@
 model.bin filter=lfs diff=lfs merge=lfs -text
+MultiLabelClassifier/model.bin filter=lfs diff=lfs merge=lfs -text
