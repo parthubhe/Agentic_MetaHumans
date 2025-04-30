@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AGENTIC Nurse Assistant</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Main CSS File (for font variables) -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Existing styles -->
+  <style>
+    :root { /* Make CSS variables available */
+      --default-font: "Source Code Pro", monospace;
+      --heading-font: "Orbitron", sans-serif;
+      --accent-color: #007bff; /* Define accent color locally or import from main.css if needed */
+      --contrast-color: #ffffff;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: var(--default-font), sans-serif; /* Use default font */
+      background-color: #f5f5f5;
+      font-size: 14px; /* Base font size */
+    }
+    .main-container {
+      display: flex;
+      height: 100vh;
+    }
+    .iframe-container {
+      flex: 3;
+      border-right: 1px solid #ccc;
+      background-color: #000; /* Optional: Black background while iframe loads */
+    }
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
+    .chat-header {
+      padding: 15px 20px; /* Adjusted padding */
+      border-bottom: 1px solid #eee;
+      font-size: 20px; /* Adjusted size */
+      font-weight: 700;
+      font-family: var(--heading-font), sans-serif; /* Use heading font */
+      background-color: #f8f9fa; /* Light header background */
+      color: #333;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #ffffff; /* White background for messages */
+    }
+    .message {
+      margin-bottom: 15px;
+      max-width: 85%; /* Limit message width */
+      opacity: 0; /* Start hidden for fade-in */
+      animation: fadeInAnimation 0.5s ease forwards;
+    }
+    @keyframes fadeInAnimation {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message .text-bubble {
+      padding: 10px 15px;
+      border-radius: 15px;
+      line-height: 1.5;
+      display: inline-block; /* Fit bubble to text */
+    }
+
+    .message.user {
+      margin-left: auto; /* Push user messages to right */
+      text-align: right;
+    }
+     .message.user .text-bubble {
+       background-color: var(--accent-color); /* Use accent color */
+       color: var(--contrast-color); /* White text */
+       border-bottom-right-radius: 5px; /* User bubble shape */
+     }
+
+    .message.bot {
+      margin-right: auto; /* Push bot messages to left */
+      text-align: left;
+    }
+     .message.bot .text-bubble {
+       background-color: #e9ecef; /* Light grey for bot */
+       color: #333; /* Dark text */
+       border-bottom-left-radius: 5px; /* Bot bubble shape */
+     }
+
+    .chat-input {
+      border-top: 1px solid #eee;
+      padding: 10px 15px; /* Adjusted padding */
+      display: flex;
+      align-items: center;
+      background-color: #f8f9fa; /* Light background for input */
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px; /* Pill shape input */
+      font-family: var(--default-font), sans-serif; /* Consistent font */
+      font-size: 14px;
+    }
+    .chat-input button {
+      padding: 8px 15px; /* Adjusted padding */
+      margin-left: 10px;
+      border: none;
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-radius: 20px; /* Pill shape buttons */
+      cursor: pointer;
+      font-family: var(--default-font), sans-serif; /* Consistent font */
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+    .chat-input button:hover {
+      background-color: color-mix(in srgb, var(--accent-color), black 15%);
+    }
+    /* Style voice button differently */
+     .chat-input button#voice-btn {
+        background-color: #6c757d; /* Secondary color */
+     }
+     .chat-input button#voice-btn:hover {
+        background-color: #5a6268;
+     }
+
+  </style>
+  <!-- New enhancements CSS -->
+  <link rel="stylesheet" href="assets/css/enhancements.css"> <!-- Keep if needed -->
+</head>
+<body>
+  <div class="main-container">
+    <div class="iframe-container">
+      <iframe id="myIframe" src="http://127.0.0.1:80" title="Localhost App" allow="camera; microphone"></iframe>
+    </div>
+    <div class="chat-container">
+      <div class="chat-header">AGENTIC Nurse Assistant</div>
+      <div class="chat-messages" id="chat-messages">
+          <!-- Messages will be added here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-btn">Send</button>
+        <button id="voice-btn"><i class="bi bi-mic-fill"></i></button> <!-- Added icon possibility -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // On page load, fetch and display the welcome message for the Nurse Agent.
+    window.onload = function() {
+      fetch("/welcome_na")
+        .then(response => response.json())
+        .then(data => {
+          addMessage("bot", data.response);
+        })
+        .catch(error => {
+          console.error("Error fetching welcome message:", error);
+          addMessage("bot", "Sorry, I couldn't load the welcome message."); // User-friendly error
+        });
+    };
+
+    document.getElementById("send-btn").addEventListener("click", function() {
+      sendMessage();
+    });
+    document.getElementById("user-input").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+    document.getElementById("voice-btn").addEventListener("click", function() {
+      startVoiceInput();
+    });
+
+    function startVoiceInput() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const voiceBtn = document.getElementById("voice-btn");
+
+      if (!SpeechRecognition) {
+        alert("Your browser does not support speech recognition.");
+        return;
+      }
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      // Provide visual feedback
+      voiceBtn.textContent = 'Listening...';
+      voiceBtn.disabled = true;
+
+      recognition.start();
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById("user-input").value = transcript; // Put transcript in input box
+        sendMessage(); // Send it like regular text
+      };
+
+      recognition.onerror = function(event) {
+        console.error("Voice recognition error:", event.error);
+        addMessage("bot", "Voice recognition error: " + event.error);
+      };
+
+      recognition.onend = function() {
+        // Restore button
+        voiceBtn.textContent = 'Voice Input'; // Or use icon: '<i class="bi bi-mic-fill"></i>'
+        voiceBtn.disabled = false;
+      };
+    }
+
+    function sendMessageWithText(message) {
+      addMessage("bot", "Thinking..."); // Add thinking indicator
+
+      fetch("/chat_na", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ user_input: message })
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+      })
+      .then(data => {
+        // Remove thinking indicator before adding response
+        removeLastBotMessageIfThinking();
+        if (data.error) {
+          addMessage("bot", "Error: " + data.error);
+        } else {
+          addMessage("bot", data.response);
+        }
+      })
+      .catch(error => {
+        console.error("Error sending message:", error);
+        // Remove thinking indicator before adding error
+        removeLastBotMessageIfThinking();
+        addMessage("bot", "Sorry, I encountered an error processing your request."); // User-friendly error
+      });
+    }
+
+    function sendMessage() {
+      const inputField = document.getElementById("user-input");
+      const message = inputField.value.trim();
+      if (message === "") return;
+      addMessage("user", message);
+      inputField.value = "";
+      sendMessageWithText(message);
+    }
+
+    function addMessage(sender, text) {
+      const chatMessages = document.getElementById("chat-messages");
+      const messageDiv = document.createElement("div");
+      messageDiv.className = "message " + sender; // fade-in applied via CSS animation
+      // Wrap text in a text bubble
+      messageDiv.innerHTML = '<div class="text-bubble">' + escapeHTML(text) + '</div>'; // Sanitize output
+      chatMessages.appendChild(messageDiv);
+      // Scroll to bottom smoothly
+      chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+    }
+
+    function removeLastBotMessageIfThinking() {
+        const chatMessages = document.getElementById("chat-messages");
+        const lastMessage = chatMessages.lastElementChild;
+        if (lastMessage && lastMessage.classList.contains('bot') && lastMessage.textContent.includes('Thinking...')) {
+            chatMessages.removeChild(lastMessage);
+        }
+    }
+
+    // Basic HTML escaping function
+    function escapeHTML(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
+  </script>
+  <!-- Include Bootstrap Icons if using icon in button -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

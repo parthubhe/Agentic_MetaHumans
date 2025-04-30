@@ -1,0 +1,391 @@
+/* assets/css/enhancements.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- General Styles --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa; /* Lighter background */
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #2c3e50; /* Darker blue-gray for headings */
+}
+
+a {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: none; /* Remove underline on hover if desired */
+}
+
+.btn {
+  border-radius: 25px; /* Rounded buttons */
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Chat Interface Enhancements --- */
+.main-container {
+  height: 100vh;
+  overflow: hidden; /* Prevent body scroll */
+}
+
+.iframe-container {
+  flex: 3;
+  border-right: 1px solid #e0e0e0;
+  background-color: #fff; /* Give iframe container a background */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-left: 1px solid #e0e0e0; /* Add border */
+}
+
+.chat-header {
+  padding: 18px 25px;
+  border-bottom: 1px solid #eee;
+  font-size: 1.4em; /* Slightly larger */
+  font-weight: 600;
+  background-color: #f1f3f5; /* Light header background */
+  color: #343a40;
+  text-align: center;
+}
+
+.chat-messages {
+  flex-grow: 1; /* Use flex-grow instead of flex: 1 */
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f8f9fa; /* Slightly off-white background for messages */
+}
+
+/* Custom Scrollbar for Webkit Browsers (Chrome, Safari) */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #6c757d;
+}
+
+
+.message {
+  margin-bottom: 18px;
+  display: flex; /* Use flex for alignment */
+  opacity: 0; /* Start invisible for fade-in */
+  animation: fadeInAnimation 0.5s ease forwards;
+}
+
+.message.user {
+  justify-content: flex-end; /* Align user messages to the right */
+}
+
+.message.bot {
+  justify-content: flex-start; /* Align bot messages to the left */
+}
+
+.text-bubble {
+  padding: 10px 18px;
+  border-radius: 18px;
+  max-width: 80%; /* Prevent bubbles from being too wide */
+  word-wrap: break-word; /* Ensure long words break */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.message.user .text-bubble {
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 5px; /* Speech bubble effect */
+  margin-left: auto; /* Push to right */
+}
+
+.message.bot .text-bubble {
+  background-color: #e9ecef;
+  color: #333;
+  border-bottom-left-radius: 5px; /* Speech bubble effect */
+  margin-right: auto; /* Push to left */
+}
+
+.chat-input {
+  border-top: 1px solid #eee;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  background: #f1f3f5; /* Match header background */
+}
+
+.chat-input input[type="text"] {
+  flex-grow: 1; /* Use flex-grow */
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 20px; /* Rounded input field */
+  margin-right: 10px;
+  font-size: 0.95em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input input[type="text"]:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px; /* Rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.95em;
+  margin-left: 5px; /* Spacing between buttons */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text (if added) */
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Optional: Add icons (requires Font Awesome or similar) */
+/* Example if using Bootstrap Icons (ensure you link BS Icons CSS) */
+/*
+#send-btn::before { content: "\f566"; font-family: bootstrap-icons; margin-right: 5px; }
+#voice-btn::before { content: "\f483"; font-family: bootstrap-icons; margin-right: 5px; }
+*/
+
+/* Fade-in animation for messages */
+@keyframes fadeInAnimation {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- index.html & agents.html Enhancements --- */
+/* Use styles from main.css, but add consistency */
+body.index-page, body.agents-page {
+    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Make Get Started buttons consistent */
+.cta-btn {
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  color: white;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: white; /* Ensure text stays white */
+}
+
+/* Pricing Section adjustments */
+.pricing .pricing-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.pricing .pricing-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing .pricing-item h3 {
+  color: #007bff;
+}
+
+.pricing .pricing-item .price {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.pricing .pricing-item ul li {
+  padding: 8px 0;
+  color: #555;
+}
+
+/* Team Section adjustments */
+.team .member {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.team .member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.team .member .pic img {
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+}
+
+.team .member h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.team .member span {
+    font-style: italic;
+    display: block;
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.team .member .social a {
+  color: #007bff;
+  margin: 0 5px;
+}
+.team .member .social a:hover {
+  color: #0056b3;
+}
+
+/* agents.html Specific */
+.agents.section {
+    padding: 60px 0;
+}
+.agents.section .btn { /* Style agent selection buttons */
+    margin: 10px 15px !important; /* Add more space */
+    min-width: 180px; /* Ensure buttons have a decent width */
+    font-size: 1.1em;
+}
+
+/* --- chef_dashboard.html Enhancements --- */
+body:has(h1:contains("Chef Dashboard")) { /* Target only the chef dashboard page */
+  padding: 30px;
+  background-color: #f8f9fa;
+}
+
+body:has(h1:contains("Chef Dashboard")) h1,
+body:has(h1:contains("Chef Dashboard")) h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+body:has(h1:contains("Chef Dashboard")) table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures border radius applies to table */
+}
+
+body:has(h1:contains("Chef Dashboard")) th,
+body:has(h1:contains("Chef Dashboard")) td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+body:has(h1:contains("Chef Dashboard")) th {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+
+body:has(h1:contains("Chef Dashboard")) tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+body:has(h1:contains("Chef Dashboard")) tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa; /* Zebra striping */
+}
+
+body:has(h1:contains("Chef Dashboard")) tbody tr:hover {
+  background-color: #e2e6ea; /* Hover effect */
+}
+
+body:has(h1:contains("Chef Dashboard")) tbody tr:last-of-type td {
+  border-bottom: none; /* Remove border from last row */
+}
+
+/* Responsive adjustments (Example) */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Stack iframe and chat on small screens */
+  }
+  .iframe-container {
+    flex: 2; /* Adjust flex ratio if needed */
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    height: 60vh; /* Example height */
+  }
+  .chat-container {
+    flex: 1;
+    height: 40vh; /* Example height */
+  }
+  .chat-header {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+   body:has(h1:contains("Chef Dashboard")) table {
+        font-size: 0.9em; /* Smaller font on small screens */
+    }
+   body:has(h1:contains("Chef Dashboard")) th,
+   body:has(h1:contains("Chef Dashboard")) td {
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Available Agents - Code Slayers</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- New Enhancements CSS -->
+  <link rel="stylesheet" href="assets/css/enhancements.css"> <!-- Keep if needed -->
+
+  <style>
+    /* Inherit fonts from main.css */
+    .agents-page {
+      padding-top: 75px; /* Match header height */
+      background-color: #f8f9fa; /* Light background for the page */
+    }
+    .agent-card {
+      border: none;
+      background-color: #ffffff; /* White card background */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Slightly softer shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+      border-radius: 8px; /* Rounded corners */
+      height: 100%; /* Make cards equal height in a row */
+      display: flex; /* Enable flex properties */
+      flex-direction: column; /* Stack card elements vertically */
+    }
+    .agent-card:hover {
+      transform: translateY(-7px); /* Lift effect on hover */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+    .agent-card .card-body {
+      padding: 2rem;
+      flex-grow: 1; /* Allow body to grow to fill height */
+      display: flex;
+      flex-direction: column; /* Align items vertically */
+      justify-content: space-between; /* Push button to bottom */
+    }
+    .agent-card .agent-icon {
+      font-size: 3.5rem; /* Larger icons */
+      margin-bottom: 1.5rem; /* More space below icon */
+    }
+    .agent-card .card-title {
+      /* Font inherited from main.css h5 */
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      font-size: 1.4rem; /* Slightly larger title */
+    }
+    .agent-card .card-text {
+      /* Font inherited from main.css */
+      color: #5a6268; /* Slightly darker grey text */
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem; /* Standard text size */
+      flex-grow: 1; /* Allow text to take available space */
+    }
+     .agent-card .btn {
+        border-radius: 50px; /* Pill shape buttons */
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-top: 1rem; /* Space above button */
+     }
+  </style>
+</head>
+<body class="agents-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <!-- Header content uses styles from main.css (black bg, white text) -->
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Code Slayers</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#agents" class="active">Agents</a></li> <!-- Link to this section -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- ======= Agents Section ======= -->
+    <section id="agents" class="agents section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header text-center mb-5"> <!-- Use section-header class -->
+          <h2>Select Your Agent</h2>
+          <p>Engage with Our Specialized AI Personas</p>
+        </div>
+        <div class="row justify-content-center"> <!-- Center row content -->
+          <!-- Agentic Receptionist Card -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch"> <!-- Use d-flex for equal height -->
+            <div class="card agent-card text-center w-100"> <!-- Add w-100 -->
+              <div class="card-body">
+                <div> <!-- Wrapper for icon, title, text -->
+                    <i class="bi bi-cup-hot-fill agent-icon text-primary"></i>
+                    <h5 class="card-title">Cafe Receptionist</h5>
+                    <p class="card-text">Handles cafe interactions, orders, and inquiries efficiently.</p>
+                </div>
+                <a href="/ar" class="btn btn-primary">Launch Agent</a>
+              </div>
+            </div>
+          </div>
+          <!-- Chef Dashboard Card -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card agent-card text-center w-100">
+              <div class="card-body">
+                <div>
+                    <i class="bi bi-clipboard2-data-fill agent-icon text-secondary"></i>
+                    <h5 class="card-title">Chef Dashboard</h5>
+                    <p class="card-text">Assists chefs with real-time order tracking and user data.</p>
+                </div>
+                <a href="/chef_dashboard" class="btn btn-secondary">View Dashboard</a>
+              </div>
+            </div>
+          </div>
+          <!-- Personal Assistant Card -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card agent-card text-center w-100">
+              <div class="card-body">
+                 <div>
+                    <i class="bi bi-person-workspace agent-icon text-info"></i>
+                    <h5 class="card-title">Personal Assistant</h5>
+                    <p class="card-text">Tailored AI to manage emails, news, weather, and music needs.</p>
+                 </div>
+                <a href="/pa" class="btn btn-info">Launch Agent</a>
+              </div>
+            </div>
+          </div>
+          <!-- Nurse Assistant Card -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+            <div class="card agent-card text-center w-100">
+              <div class="card-body">
+                <div>
+                    <i class="bi bi-heart-pulse-fill agent-icon text-warning"></i>
+                    <h5 class="card-title">Nurse Assistant</h5>
+                    <p class="card-text">Supports nursing tasks, patient info, inventory, and vitals monitoring.</p>
+                </div>
+                <a href="/agenticNurse" class="btn btn-warning">Launch Agent</a>
+              </div>
+            </div>
+          </div>
+        </div> <!-- end row -->
+      </div>
+    </section><!-- /Agents Section -->
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <!-- Footer content uses styles from main.css -->
+    <div class="container copyright text-center mt-4">
+      <p>© Copyright <strong class="sitename">Code Slayers</strong> All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script> <!-- Keep if needed elsewhere -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
