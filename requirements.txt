@@ -1,0 +1,37 @@
+# Core Framework & Web Server
+flask
+
+# HTTP Requests
+requests
+
+# Language Model & Agents
+langchain
+langchain-groq
+langchain-core  # Often implicitly needed by langchain components
+
+# Audio Processing & TTS
+gTTS
+pydub
+mutagen
+SpeechRecognition # For microphone input
+
+# Audio2Face Interaction & TTS (Alternative/Utils)
+gradio-client # Used in a2f_utils
+
+# Emotion Classification Model
+torch
+transformers
+regex # Explicitly imported in emoClassier
+
+# Personal Assistant Dependencies
+python-dotenv   # For loading .env files
+python-vlc      # For VLC media player control (ensure VLC is installed separately)
+yt-dlp          # For downloading music/audio from YouTube etc.
+opencv-python   # For video capture (used by fer)
+fer             # Facial emotion recognition (may pull tensorflow or require manual install)
+
+# --- Optional/Development ---
+# numpy # Often used with ML/data libraries, uncomment if needed
+# pyAudioAnalysis # If you uncomment the code in voice_utils.py
+# soundfile # If you uncomment the code in voice_utils.py
+# pyttsx3 # If you were to use this simple offline TTS
